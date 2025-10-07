@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRAHAAR AI - Defense Command Center</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Top Navigation -->
+    <header class="top-nav">
+        <div class="nav-left">
+            <div class="logo">
+                <span class="logo-text">PRAHAAR AI</span>
+                <div class="flag-indicator"></div>
+            </div>
+            <div class="mission-status">
+                <span class="status-label">MISSION STATUS:</span>
+                <span class="status-value operational">OPERATIONAL</span>
+            </div>
+        </div>
+        <div class="nav-right">
+            <div class="system-time" id="systemTime"></div>
+            <div class="alert-indicator" id="alertIndicator">
+                <span class="alert-count">3</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Dashboard -->
+    <main class="dashboard">
+        <!-- Threat Detection Module -->
+        <section class="module threat-detection" id="threatModule">
+            <div class="module-header">
+                <h3>THREAT DETECTION</h3>
+                <div class="status-indicator active"></div>
+            </div>
+            <div class="module-content">
+                <div class="threat-grid" id="threatGrid">
+                    <!-- Threats will be populated by JavaScript -->
+                </div>
+                <div class="threat-summary">
+                    <div class="threat-count critical">
+                        <span class="count" id="criticalCount">0</span>
+                        <span class="label">CRITICAL</span>
+                    </div>
+                    <div class="threat-count high">
+                        <span class="count" id="highCount">0</span>
+                        <span class="label">HIGH</span>
+                    </div>
+                    <div class="threat-count medium">
+                        <span class="count" id="mediumCount">0</span>
+                        <span class="label">MEDIUM</span>
+                    </div>
+                    <div class="threat-count low">
+                        <span class="count" id="lowCount">0</span>
+                        <span class="label">LOW</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Battlespace Awareness Module -->
+        <section class="module battlespace" id="battlespaceModule">
+            <div class="module-header">
+                <h3>BATTLESPACE AWARENESS</h3>
+                <div class="status-indicator active"></div>
+            </div>
+            <div class="module-content">
+                <div class="map-container">
+                    <div class="tactical-map">
+                        <div class="region kashmir" data-region="Kashmir">
+                            <div class="asset-marker air-base"></div>
+                            <span class="region-name">Kashmir Sector</span>
+                        </div>
+                        <div class="region delhi" data-region="Delhi">
+                            <div class="asset-marker command-center"></div>
+                            <span class="region-name">Delhi Command</span>
+                        </div>
+                        <div class="region rajasthan" data-region="Rajasthan">
+                            <div class="asset-marker border-post"></div>
+                            <span class="region-name">Rajasthan Border</span>
+                        </div>
+                        <div class="region arabian-sea" data-region="Arabian Sea">
+                            <div class="asset-marker naval-base"></div>
+                            <span class="region-name">Arabian Sea</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="battlespace-stats">
+                    <div class="stat-item">
+                        <span class="stat-value">12</span>
+                        <span class="stat-label">ASSETS TRACKED</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value">4</span>
+                        <span class="stat-label">ACTIVE ZONES</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Command Operations Module -->
+        <section class="module command-ops" id="commandModule">
+            <div class="module-header">
+                <h3>COMMAND OPERATIONS</h3>
+                <div class="status-indicator active"></div>
+            </div>
+            <div class="module-content">
+                <div class="units-grid" id="unitsGrid">
+                    <!-- Units will be populated by JavaScript -->
+                </div>
+                <div class="missions-list" id="missionsList">
+                    <h4>ACTIVE MISSIONS</h4>
+                    <!-- Missions will be populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Intelligence Analysis Module -->
+        <section class="module intelligence" id="intelligenceModule">
+            <div class="module-header">
+                <h3>INTELLIGENCE ANALYSIS</h3>
+                <div class="status-indicator active"></div>
+            </div>
+            <div class="module-content">
+                <div class="intel-dashboard">
+                    <div class="data-correlation">
+                        <h4>DATA CORRELATION</h4>
+                        <div class="correlation-grid">
+                            <div class="data-point">
+                                <span class="metric">PATTERN MATCH</span>
+                                <span class="value">87%</span>
+                            </div>
+                            <div class="data-point">
+                                <span class="metric">THREAT PREDICTION</span>
+                                <span class="value">94%</span>
+                            </div>
+                            <div class="data-point">
+                                <span class="metric">INTEL CONFIDENCE</span>
+                                <span class="value">76%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="analysis-feed">
+                        <h4>ANALYSIS FEED</h4>
+                        <div class="feed-items">
+                            <div class="feed-item">
+                                <span class="timestamp">10:45</span>
+                                <span class="message">Unusual air traffic patterns detected in northern sector</span>
+                            </div>
+                            <div class="feed-item">
+                                <span class="timestamp">10:30</span>
+                                <span class="message">Cyber threat indicators elevated across defense networks</span>
+                            </div>
+                            <div class="feed-item">
+                                <span class="timestamp">10:15</span>
+                                <span class="message">Maritime surveillance reports increased activity</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Communication Hub Module -->
+        <section class="module communications" id="communicationsModule">
+            <div class="module-header">
+                <h3>COMMUNICATION HUB</h3>
+                <div class="status-indicator active"></div>
+            </div>
+            <div class="module-content">
+                <div class="comm-channels">
+                    <div class="channel">
+                        <div class="channel-header">
+                            <span class="channel-name">SECURE ALPHA</span>
+                            <div class="channel-status online"></div>
+                        </div>
+                        <div class="channel-info">24 Units Connected</div>
+                    </div>
+                    <div class="channel">
+                        <div class="channel-header">
+                            <span class="channel-name">TACTICAL BRAVO</span>
+                            <div class="channel-status online"></div>
+                        </div>
+                        <div class="channel-info">18 Units Connected</div>
+                    </div>
+                    <div class="channel">
+                        <div class="channel-header">
+                            <span class="channel-name">INTEL CHARLIE</span>
+                            <div class="channel-status degraded"></div>
+                        </div>
+                        <div class="channel-info">12 Units Connected</div>
+                    </div>
+                </div>
+                <div class="emergency-controls">
+                    <button class="emergency-btn">EMERGENCY BROADCAST</button>
+                    <button class="priority-btn">PRIORITY ALERT</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- System Monitoring Module -->
+        <section class="module systems" id="systemsModule">
+            <div class="module-header">
+                <h3>SYSTEM MONITORING</h3>
+                <div class="status-indicator active"></div>
+            </div>
+            <div class="module-content">
+                <div class="systems-grid" id="systemsGrid">
+                    <!-- Systems will be populated by JavaScript -->
+                </div>
+                <div class="network-health">
+                    <h4>NETWORK HEALTH</h4>
+                    <div class="health-bars">
+                        <div class="health-bar">
+                            <span class="bar-label">CPU</span>
+                            <div class="bar-container">
+                                <div class="bar-fill" style="width: 65%"></div>
+                            </div>
+                            <span class="bar-value">65%</span>
+                        </div>
+                        <div class="health-bar">
+                            <span class="bar-label">MEM</span>
+                            <div class="bar-container">
+                                <div class="bar-fill" style="width: 78%"></div>
+                            </div>
+                            <span class="bar-value">78%</span>
+                        </div>
+                        <div class="health-bar">
+                            <span class="bar-label">NET</span>
+                            <div class="bar-container">
+                                <div class="bar-fill" style="width: 92%"></div>
+                            </div>
+                            <span class="bar-value">92%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal for detailed views -->
+    <div class="modal hidden" id="detailModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">Details</h3>
+                <button class="modal-close" id="modalClose">&times;</button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Content will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

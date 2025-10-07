@@ -1,0 +1,17 @@
+{
+  "name": "prahaar-ai-platform",
+  "version": "1.0.0",
+  "description": "Indigenous Defense Command & Control System",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx serve .",
+    "build": "echo 'Build complete'",
+    "start": "npx serve ."
+  },
+  "keywords": ["defense", "ai", "command", "control", "prahaar"],
+  "author": "Defense R&D",
+  "license": "MIT",
+  "devDependencies": {
+    "serve": "^14.0.0"
+  }
+}
